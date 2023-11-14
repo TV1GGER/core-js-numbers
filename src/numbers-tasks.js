@@ -194,8 +194,15 @@ function getParallelepipedDiagonal(/* a, b, c */) {
  *   1678, 2  => 1700
  *   1678, 3  => 2000
  */
-function roundToPowerOfTen(/* num, pow */) {
-  throw new Error('Not implemented');
+function roundToPowerOfTen(num, pow) {
+  if (pow === 0) {
+    return num;
+  }
+  if (pow !== 0) {
+    const result = num / 10 ** pow;
+    return Math.round(result) * 10 ** pow;
+  }
+  return false;
 }
 
 /**
