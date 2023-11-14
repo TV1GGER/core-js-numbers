@@ -49,26 +49,18 @@ function getCircleCircumference(radius) {
  *  10, 0  => 5
  *  -3, 3  => 0
  */
-function getAverage(/* value1, value2 */) {
-  /* const sum = value1 + value2;
-  if (sum !== 0 && Number.isFinite(sum / 2) === false) {
-    return sum / 2;
-  }
-  if (sum !== 0 && Number.isFinite(sum / 2) === true) {
-    const resultNum1 = value1 / 2;
-    const resultNum2 = value2 / 2;
+function getAverage(value1, value2) {
+  const resultNum1 = value1 / 2;
+  const resultNum2 = value2 / 2;
+  const sum = value1 + value2;
+  if (sum !== 0) {
     const result = resultNum1 + resultNum2;
     return result;
   }
   if (sum === 0) {
     return sum;
   }
-  /* if (typeof (sum / 2) === 'bigint') {
-    const bigIntResult = BigInt(sum / 2);
-    return bigIntResult;
-  } */
-  /* return 0; */
-  throw new Error('Not implemented');
+  return false;
 }
 
 /**
