@@ -432,8 +432,23 @@ function toFixed(number, fractionDigits) {
  * 12345, 7    => '12345.00'
  * 12.345, 4   => '12.35'
  */
-function toPrecision(/* number, precision */) {
-  throw new Error('Not implemented');
+function toPrecision(number, precision) {
+  const newStr = number.toString();
+  let resultStr = '';
+  if (newStr.length < precision && Number.isInteger(number)) {
+    resultStr += `${newStr}.`;
+    for (let i = 0; i <= precision; i += 1) {
+      resultStr += '0';
+    }
+    return resultStr;
+  }
+  if (newStr.length === precision) {
+    return newStr;
+  }
+  if (newStr.length > precision) {
+    return number.toPrecision(precision).toString();
+  }
+  return false;
 }
 
 /**
